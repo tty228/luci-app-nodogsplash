@@ -190,7 +190,6 @@ local apply = luci.http.formvalue("cbi.apply")
  if apply then
      io.popen("sed -i '/temp_type/'d /etc/config/nodogsplash")
      io.popen("sed -i '/temp_mask/'d /etc/config/nodogsplash")
-	 --[[io.popen("if [ -z `cat /etc/sysupgrade.conf | grep -i -w "/etc/nodogsplash" )` ] ; then echo "/etc/nodogsplash" >> /etc/sysupgrade.conf;fi")--]]
      io.popen("/etc/init.d/nodogsplash start")
 end
 return m
